@@ -58,22 +58,22 @@ function setup() {
     bullet1=createSprite(width*0.1,100)
     bullet1.addImage(bullet_Img)
     bullet1.scale=0.2
-    bullet1.velocityX=5
+    bullet1.velocityX=10
 
     bullet2=createSprite(width*0.1,300)
     bullet2.addImage(bullet_Img_2)
     bullet2.scale=0.2
-    bullet2.velocityX=5
+    bullet2.velocityX=10
 
     bullet3=createSprite(width*0.1,500)
     bullet3.addImage(bullet_Img_3)
     bullet3.scale=0.2  
-    bullet3.velocityX=5
+    bullet3.velocityX=10
 
     bullet4=createSprite(width*0.1,700)
     bullet4.addImage(bullet_Img_4)
     bullet4.scale=0.2
-    bullet4.velocityX=5
+    bullet4.velocityX=10
 
     bulletGroup.add(bullet4)
     bulletGroup.add(bullet1)
@@ -126,8 +126,8 @@ function draw() {
       
     
       fill("red")
-      textSize(50)
-      text("Press Up arrow to begin",1500,920)
+      textSize(40)
+      text("Press Up arrow to begin",1300,820)
       if(keyCode===38){
         gameState=1
       }
@@ -172,17 +172,17 @@ function draw() {
         bullet2=createSprite(width*0.1,300)
         bullet2.addImage(bullet_Img_3)
         bullet2.scale=0.2
-        bullet2.velocityX=5
+        bullet2.velocityX=10
     
         bullet3=createSprite(width*0.1,500)
         bullet3.addImage(bullet_Img_4)
         bullet3.scale=0.2
-        bullet3.velocityX=5
+        bullet3.velocityX=10
     
         bullet4=createSprite(width*0.1,700)
         bullet4.addImage(bullet_Img)
         bullet4.scale=0.2
-        bullet4.velocityX=5
+        bullet4.velocityX=10
     
         bulletGroup.add(bullet4)
         bulletGroup.add(bullet1)
@@ -190,7 +190,7 @@ function draw() {
         bulletGroup.add(bullet3)
       }
     if(keyCode===32){
-      bullet1.velocityX=5
+      bullet1.velocityX=10
     }
   
 
@@ -269,7 +269,7 @@ function draw() {
  
 
 function alienMaker(){
-  if(frameCount % 100 === 0) {
+  if(frameCount % 70 === 0) {
     alien = createSprite(random(width*.5, width*.9), random(height*.5,height*.9));
     
     var rand = Math.round(random(1,4));
