@@ -34,10 +34,10 @@ function preload() {
 
 function setup() {
 
-    width = windowWidth-20;
-    height = windowHeight-20;
+   // width = windowWidth-20;
+    //height = windowHeight-20;
 
-    createCanvas(width, height);
+    createCanvas(windowWidth, windowHeight);
 
     pl1=createSprite(width*0.1,100,10,10)
     pl1.addImage(pl_1img)
@@ -58,30 +58,29 @@ function setup() {
     bullet1=createSprite(width*0.1,100)
     bullet1.addImage(bullet_Img)
     bullet1.scale=0.2
-    bullet1.velocityX=10
+    bullet1.velocityX=4
 
     bullet2=createSprite(width*0.1,300)
     bullet2.addImage(bullet_Img_2)
     bullet2.scale=0.2
-    bullet2.velocityX=10
+    bullet2.velocityX=4
 
     bullet3=createSprite(width*0.1,500)
     bullet3.addImage(bullet_Img_3)
     bullet3.scale=0.2  
-    bullet3.velocityX=10
+    bullet3.velocityX=4
 
     bullet4=createSprite(width*0.1,700)
     bullet4.addImage(bullet_Img_4)
     bullet4.scale=0.2
-    bullet4.velocityX=10
+    bullet4.velocityX=4
 
     bulletGroup.add(bullet4)
     bulletGroup.add(bullet1)
     bulletGroup.add(bullet2)
     bulletGroup.add(bullet3)
 
-    bulletGroup.setLifetimeEach=300
-
+    
     playerGroup.add(pl1)
     playerGroup.add(pl2)
     playerGroup.add(pl3)
@@ -124,10 +123,10 @@ function draw() {
       text("Press the SPACE key to fire bullet",20,850)
       text("Press the ENTER key to re-fire bullet", 20,900)
       
-    
+     // text("You must press the space key to make your bullets mover and if the alien is killed you must press enter",200,400)
       fill("red")
-      textSize(40)
-      text("Press Up arrow to begin",1300,820)
+      textSize(50)
+      text("Press Up arrow to begin",1500,920)
       if(keyCode===38){
         gameState=1
       }
@@ -172,17 +171,17 @@ function draw() {
         bullet2=createSprite(width*0.1,300)
         bullet2.addImage(bullet_Img_3)
         bullet2.scale=0.2
-        bullet2.velocityX=10
+        bullet2.velocityX=4
     
         bullet3=createSprite(width*0.1,500)
         bullet3.addImage(bullet_Img_4)
         bullet3.scale=0.2
-        bullet3.velocityX=10
+        bullet3.velocityX=4
     
         bullet4=createSprite(width*0.1,700)
         bullet4.addImage(bullet_Img)
         bullet4.scale=0.2
-        bullet4.velocityX=10
+        bullet4.velocityX=4
     
         bulletGroup.add(bullet4)
         bulletGroup.add(bullet1)
@@ -190,7 +189,7 @@ function draw() {
         bulletGroup.add(bullet3)
       }
     if(keyCode===32){
-      bullet1.velocityX=10
+      bullet1.velocityX=4
     }
   
 
@@ -241,7 +240,10 @@ function draw() {
     over.visible=true
     alienGroup.destroyEach()
     playerGroup.destroyEach()
-  
+    //textSize(50)
+    //fill("blue")
+  //  text("Game Over",width*0.4,height*0.1)
+   // text("Press Up Arrow to see the score",500,200)
    if(pl1_score===10){
     textSize(30)
      fill("white")
@@ -269,7 +271,7 @@ function draw() {
  
 
 function alienMaker(){
-  if(frameCount % 70 === 0) {
+  if(frameCount % 100 === 0) {
     alien = createSprite(random(width*.5, width*.9), random(height*.5,height*.9));
     
     var rand = Math.round(random(1,4));
@@ -288,8 +290,34 @@ function alienMaker(){
           break;
     }
     alienGroup.add(alien)
-    alienGroup.setLifetimeEach=600
+    alienGroup.lifetime=600
 }
 }
 
+/*function bullet(){
+  
+    bullet4=createSprite(160,700)
+    bullet4.addImage(bullet_Img)
+    bullet4.scale=0.2
+    bullet4.velocityX=4
 
+    bullet1=createSprite(160,500)
+    bullet1.addImage(bullet_Img_2)
+    bullet1.scale=0.2
+   
+    bullet2=createSprite(160,100)
+    bullet2.addImage(bullet_Img_3)
+    bullet2.scale=0.2
+    bullet2.velocityX=4
+
+    bullet3=createSprite(160,300)
+    bullet3.addImage(bullet_Img_4)
+    bullet3.scale=0.2
+    bullet3.velocityX=4
+  
+    bulletGroup.add(bullet4)
+    bulletGroup.add(bullet1)
+    bulletGroup.add(bullet2)
+    bulletGroup.add(bullet3)
+  }
+*/
